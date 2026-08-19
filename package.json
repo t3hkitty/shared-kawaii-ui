@@ -1,0 +1,11 @@
+{
+  "name": "@lorik/shared-kawaii-ui",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.tsx",
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "lucide-react": "^1.28.0"
+  }
+}
