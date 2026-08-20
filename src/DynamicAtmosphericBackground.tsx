@@ -27,12 +27,19 @@ const THEME_SETS: Record<string, any> = {
   }
 };
 
+interface BackgroundProps {
+  activeC4Scene?: string;
+  weatherCondition?: string;
+  manualTimeOfDay?: string;
+  themeStyleSet?: string;
+}
+
 export default function DynamicAtmosphericBackground({
   activeC4Scene = 'all',
   weatherCondition = 'clear',
   manualTimeOfDay = 'auto',
   themeStyleSet = 'classic' // 'classic' | 'cute' | 'silly'
-}) {
+}: BackgroundProps) {
   const [timeOfDay, setTimeOfDay] = useState('midday');
 
   useEffect(() => {
@@ -58,7 +65,7 @@ export default function DynamicAtmosphericBackground({
   const activeTimeTheme = activeThemePack[timeOfDay] || activeThemePack.midday;
 
   // C4 Scene Color Overlays
-  const C4_SCENE_GLOWS = {
+  const C4_SCENE_GLOWS: Record<string, string> = {
     create: 'rgba(16, 185, 129, 0.18)',
     consume: 'rgba(96, 165, 250, 0.18)',
     chat: 'rgba(236, 72, 153, 0.18)',

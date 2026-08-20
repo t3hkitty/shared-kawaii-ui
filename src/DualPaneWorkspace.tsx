@@ -1,10 +1,21 @@
 import React from 'react';
 import { WidgetPanel } from './WidgetPanel';
 
+interface DualPaneWorkspaceProps {
+  leftTitle: string;
+  leftIcon?: React.ReactNode;
+  leftContent: React.ReactNode;
+  leftHeaderControls?: React.ReactNode;
+  rightTitle: string;
+  rightIcon?: React.ReactNode;
+  rightContent: React.ReactNode;
+  rightHeaderControls?: React.ReactNode;
+}
+
 export const DualPaneWorkspace = ({ 
   leftTitle, leftIcon, leftContent, leftHeaderControls,
   rightTitle, rightIcon, rightContent, rightHeaderControls
-}) => {
+}: DualPaneWorkspaceProps) => {
   return (
     <div style={{ display: 'flex', gap: '1.5rem', height: 'calc(100vh - 120px)', width: '100%' }}>
       {/* Left Pane */}

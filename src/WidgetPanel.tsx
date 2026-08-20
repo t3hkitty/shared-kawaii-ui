@@ -1,6 +1,16 @@
 import React from 'react';
 
-export const WidgetPanel = ({ title, icon, isPinned, onTogglePin, children, className = '', style = {} }) => {
+interface WidgetPanelProps {
+  title: string;
+  icon?: React.ReactNode;
+  isPinned?: boolean;
+  onTogglePin?: () => void;
+  children?: React.ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+export const WidgetPanel = ({ title, icon, isPinned, onTogglePin, children, className = '', style = {} }: WidgetPanelProps) => {
   return (
     <div 
       className={`glass-panel ${isPinned ? 'pinned-tape' : ''} ${className}`}
